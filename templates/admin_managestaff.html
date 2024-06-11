@@ -1,0 +1,217 @@
+{% include 'admin_header.html' %}
+
+    <div class="banner-info-w3layouts text-center">
+
+ 
+
+<!--//banner-info-w3layouts-->
+    <form action="" method="POST">
+        <center>
+
+
+        {% if data['staff'] %}
+
+        <div>
+
+        
+            <h1 style="margin-top: 10px;color: black;" >Update Staff</h1>
+            <table class="table" style="width:450px;;color: white">
+            
+            <tr>
+                <th>Firstname</th>
+                <td><input type="text" required  class="form-control"value="{{ data['staff'][0]['staff_fname'] }}"name="Firstname"></td>
+            </tr>
+            <tr>
+                <th>Lastname</th>
+                <td><input type="text" required  class="form-control" value="{{ data['staff'][0]['staff_lname'] }}"name="Lastname"></td>
+            </tr>
+            <tr>
+                <th>Phone Number</th>
+                <td><input type="text" required class="form-control"value="{{ data['staff'][0]['staff_phone'] }}"name="Phone_number" pattern="[0-9]{10}"></td>
+            </tr>
+            
+            
+        <tr>
+           
+            <th>Gender</th>
+            <td><input type="radio"class="form-control" required  name="gender">
+                <input type="radio" class="form-control" required="" name="gender"></td>
+        </tr>
+
+         <tr>
+            <th>City</th>
+            <td><input type="text"class="form-control" value="{{data['staff'][0]['staff_city']}}" required  name="City"></td>
+        </tr>
+            <tr>
+                <th>District</th>
+                <td><input type="text" required class="form-control"value="{{ data['staff'][0]['staff_district'] }}" name="District"></td>
+            </tr>
+
+            <tr>
+            <th>State</th>
+            <td><input type="text"class="form-control" value="{{data['staff'][0]['staff_state']}}" required  name="State"></td>
+        </tr>
+            <tr>
+                <th>Pincode</th>
+                <td><input type="text" required class="form-control" value="{{ data['staff'][0]['staff_pin'] }}"name="Pincode" pattern="[0-9]{6}"></td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td><input type="date" required class="form-control"value="{{ data['staff'][0]['sdoj'] }}" name="Date"></td>
+    
+            </tr> 
+            <!-- <tr>
+                <th>Email</th>
+                <td><input type="text"class="form-control" required value="{{ data['staff'][0]['Email'] }}" name="Email"></td>
+            </tr>
+            <th>Password</th>
+                <td><input type="password"class="form-control" required name="Password"></td>
+            </tr> -->
+
+           
+            <tr>
+                <span style="padding-left:30px;">
+                <td><input type="submit" value="Update" class="btn btn-success" name="update"></td></span>.
+            </tr>
+            
+    
+        </table>
+    
+
+
+{% else %}
+
+       
+
+        
+        <h1 style="margin-top: 10px;color: black;" >Add Staff</h1>
+        <table class="table" style="width:450px;;color: white">
+
+
+            
+           
+           
+        
+        <tr>
+            <th>Email</th>
+            <td><input type="text"class="form-control" required  name="Email"></td>
+        </tr>
+        <th>Password</th>
+            <td><input type="password"class="form-control" required  name="Password"></td>
+        </tr>
+        <tr>
+            <th>Firstname</th>
+            <td><input type="text" class="form-control" required name="Firstname"></td>
+        </tr>
+        <tr>
+            <th>Lastname</th>
+            <td><input type="text" class="form-control" required name="Lastname"></td>
+        </tr>
+        <tr>
+            <th>Phone Number</th>
+            <td><input type="text"class="form-control" required name="Phone_number"></td>
+        </tr>
+        
+        <tr>
+           
+            <th>Gender</th>
+            <td><input type="radio"class="form-control" value="male" required  name="gender">Male
+                <input type="radio" class="form-control" value="female" required="" name="gender">Female</td>
+        </tr>
+
+         <tr>
+            <th>City</th>
+            <td><input type="text"class="form-control" required  name="City"></td>
+        </tr>
+        <tr>
+            <th>State</th>
+            <td><input type="text"class="form-control" required  name="State"></td>
+        </tr>
+        <tr>
+            <th>District</th>
+            <td><input type="text"class="form-control" required  name="District"></td>
+        </tr>
+        <tr>
+            <th>Pincode</th>
+            <td><input type="text"class="form-control" required  name="Pincode"></td>
+        </tr>
+        <tr>
+            <th>Date</th>
+            <td><input type="date"class="form-control" required  name="Date"></td>
+
+        </tr>
+
+
+       
+        <tr>
+            <span style="padding-left:30px;">
+            <td><input type="submit" value="Submit" class="btn btn-success" name="submit"></td></span>.
+        </tr>
+        
+
+    </table>
+
+
+</form>
+{% endif %}
+
+
+
+
+</div>
+</tr></table></h3></div></center></tr></table></h3>.</div></center></form></div>
+
+      <br>
+      <h1 style="margin-top: 5px;color: black;" >View Staff</h1>
+    <table class="table table-striped">
+        <tr>
+          
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>PhoneNo</th>
+            <th>Gender</th>
+            <th>City</th>
+            <th>District</th>
+            <th>State</th>
+            
+            <th>Pincode</th>
+            <th>Date Of Joining</th>
+            <th>Status</th>
+            <th>Update</th>
+            <th>Action</th>
+            
+
+            <th></th>
+        </tr>
+        {% for r in data['view'] %}
+        <tr>
+            <td>{{r['staff_fname']}}</td>
+            <td>{{r['staff_lname']}}</td>
+            <td>{{r['staff_phone']}}</td>
+            
+            <td>{{r['staff_gen']}}</td>
+            <td>{{r['staff_city']}}</td>
+            <td>{{r['staff_district']}}</td>
+            <td>{{r['staff_state']}}</td>
+            <td>{{r['staff_pin']}}</td>
+            <td>{{r['sdoj']}}</td>
+
+            <td>{{r['staff_status']}}</td>
+            <td><a class="btn btn-success" href="?action=update&sid={{ r['staff_id'] }}">update</a></td>  
+            {% if r['staff_status'] == "1"%}
+        <td><a href="?action=inactive&sid={{r['staff_id']}}"  class="btn btn-danger">Inactive</a></td>
+        {% elif r['staff_status']=="0" %}
+        <td><a href="?action=active&sid={{r['staff_id']}}"  class="btn btn-primary">Active</a></td>
+
+        {% endif %}
+            
+
+
+        </tr>
+        {% endfor %}
+        
+    </table>
+    </center>
+
+    </form>
+{% include 'footer.html'%}

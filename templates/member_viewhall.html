@@ -1,0 +1,43 @@
+{% include 'member_header.html'%}
+
+
+   <div class="banner-info-w3layouts text-center" >
+
+ 
+
+<!--//banner-info-w3layouts-->
+    <form action="" method="POST">
+        <center>
+            <br><br>
+
+<h4>View Hall</h4>
+    <table class="table table-striped" style="color: white">
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+
+            <th>Hall Rate</th>
+            <th>Event Type</th>
+
+           
+            
+        </tr>
+        {% for r in data['hall'] %}
+        <tr>
+            <td>{{r['Name']}}</td>
+            <td>{{r['subcat_name']}}</td>
+            <td>{{r['h_rate']}}</td>
+            <td>{{r['event_type']}}</td>
+            <td><a class="btn btn-success" href="?action=book&hid={{r['hall_id']}}&eid={{r['event_id']}}&amt={{r['h_rate']}}">Book Now</a></td>
+            
+           
+
+
+        </tr>
+        {% endfor %}
+        </table>
+
+</center>
+    </div>
+</tr></table></h3></div></center></tr></table></h3>.</div></center></form></div>
+    {% include 'footer.html' %}

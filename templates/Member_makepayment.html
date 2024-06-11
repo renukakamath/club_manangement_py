@@ -1,0 +1,47 @@
+{% include 'member_header.html'%}
+
+
+    <div class="banner-info-w3layouts text-center">
+
+ 
+
+<!--//banner-info-w3layouts-->
+    <form action="" method="POST">
+        <center>
+
+<center>
+	<h1>Make Payment</h1>
+	<form method="post">
+		<table class="table" style="width: 500px;color: white">
+		<tr>
+			<th>Card Name</th>
+			<td><input type="text" class="form-control"  required="" name="cname"></td>
+		</tr>
+		<tr>
+			<th>Card Number</th>
+			<td><input type="number" class="form-control"  required=""  name="cnum"></td>
+		</tr>
+		<tr>
+			<th>C V V</th>
+			<td><input type="text" class="form-control"  required="" name="cvv"></td>
+		</tr>
+		<tr>
+			<th>Exp-Date</th>
+			<td><input type="date"class="form-control"  required="" name="date"></td>
+		</tr>
+		<tr>
+			<th>Amount</th>
+			<td><input type="text" class="form-control"  required="" value="{{data['amt']}}" name="amt"></td>
+		</tr>
+		<tr>
+			<td align="center" colspan="2"><input type="submit" class="btn btn-success" name="payment"></td>
+		</tr>
+	</table>
+	</form>
+</center>
+
+
+
+</div>
+</tr></table></h3></div></center></tr></table></h3>.</div></center></form></div>
+{% include 'footer.html'%}

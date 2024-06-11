@@ -1,0 +1,56 @@
+{% include 'member_header.html'%}
+
+
+
+   <div class="banner-info-w3layouts text-center" >
+
+ 
+
+<!--//banner-info-w3layouts-->
+    <form action="" method="POST">
+        <center>
+            <br><br>
+
+<h4>View Bookings</h4>
+    <table class="table table-striped" style="color: white"  >
+        <tr>
+            <th>Amount</th>
+            <th>Booking Date</th>
+
+            <th>Event Type</th>
+            <th>Payment date</th>
+            <th>Status</th>
+
+           
+            
+        </tr>
+        {% for r in data['hallpay'] %}
+        <tr>
+            <td>{{r['pay_amt']}}</td>
+            <td>{{r['b_date']}}</td>
+            <td>{{r['event_type']}}</td>
+            <td>{{r['p_date']}}</td>
+            <td>{{r['fee_status']}}</td>
+
+            {% if r['fee_status']=="Booked"%}
+            <td><a class="btn btn-success" href="Member_makepayment?hpay_id={{r['hpay_id']}}&amt={{r['pay_amt']}}">Make Payment</a></td>
+            {% endif %}
+            
+           
+
+
+        </tr>
+        {% endfor %}
+        </table>
+
+</center>
+
+    {% include 'footer.html' %}
+</div>
+</tr></table></h3></div></center></tr></table></h3>.</div></center></form></div>
+
+
+
+
+    
+

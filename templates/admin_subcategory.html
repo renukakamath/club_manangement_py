@@ -1,0 +1,88 @@
+{% include 'admin_header.html' %}
+    
+
+
+   <div class="banner-info-w3layouts text-center">
+
+ 
+
+<!--//banner-info-w3layouts-->
+    <form action="" method="POST">
+        <center>
+
+            {% if data['category'] %}
+            <div class="top">
+        
+                <h3>Update SubCategory</h1>
+                
+             <table class="table" style="width: 500px;;color: white">
+                 <tr>
+                     <center>
+                     <th>Name </th>
+                     <td><input type="text" value="{{ data['category'][0]['subcat_name'] }}"class="form-control" name="Name"></td>
+                 </tr>
+                 
+                 <tr>
+                     <span style="padding-left: 200px;">
+                     <td align="center" colspan="2"><input type="submit" value="Update" class="btn btn-success" name="update"></td></span>
+                 </tr>
+             </table>
+     
+            </center>
+         
+        </div>
+         </form>
+         {% else %}
+         <center>
+
+         <div class="top">
+             <h3>Add SubCategory </h1>
+
+       
+
+        <table class="table" style="width: 500px;;color: white">
+            <tr>
+                <center>
+                <th>Name </th>
+                <td><input type="text" class="form-control" name="Name"></td>
+            </tr>
+            
+      
+
+            <tr>
+                <span style="padding-left: 200px;">
+                <td align="center" colspan="2"><input type="submit" value="Submit" class="btn btn-success" name="submit"></td></span>
+            </tr>
+        </table>
+    </div>
+</center>
+  
+</form>
+{% endif %}
+
+
+</div>
+</tr></table></h3></div></center></tr></table></h3>.</div></center></form></div>
+<h4>View SubCategory</h4>
+    <table class="table table-striped">
+        <tr>
+            <th>Name</th>
+         
+            <th>Update</th>
+            
+        </tr>
+        {% for r in data['view'] %}
+        <tr>
+            <td>{{r['subcat_name']}}</td>
+            
+            <td><a class="btn btn-success" href="?action=update&cid={{ r['subcat_id'] }}">update</a></td>  
+           
+
+
+        </tr>
+        {% endfor %}
+        </table>
+
+
+    
+    {% include 'footer.html' %}

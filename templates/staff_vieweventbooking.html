@@ -1,0 +1,52 @@
+{% include 'staff_header.html'%}
+   <div class="banner-info-w3layouts text-center">
+
+ 
+
+<!--//banner-info-w3layouts-->
+    <form action="" method="POST">
+        <center>
+
+<h4>View Bookings</h4>
+    <table class="table table-striped"  style="color: white">
+        <tr>
+            <th>Event Type</th>
+            <th>Category</th>
+            <th>Subcategory</th>
+            <th>Member</th>
+            <th>Pay Amount</th>
+            <th>Pay Date</th>
+            <th>Status</th>
+           
+            
+        </tr>
+        {% for r in data['mens'] %}
+        <tr>
+            <td>{{r['event_type']}}</td>
+            <td>{{r['Name']}}</td>
+            <td>{{r['subcat_name']}}</td>
+            <td>{{r['men_fname']}}</td>
+            <td>{{r['pay_amt']}}</td>
+            <td>{{r['p_date']}}</td>
+            <td>{{r['fee_status']}}</td>
+           
+            
+
+            
+
+
+        </tr>
+        {% endfor %}
+        </table>
+
+</center>
+    
+   
+
+
+
+    </div>
+</tr></table></h3></div></center></tr></table></h3>.</div></center></form></div>
+
+
+ {% include 'footer.html' %}

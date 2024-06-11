@@ -1,0 +1,81 @@
+{% include 'public_header.html' %}
+    
+          <!-- <labe>Usernamre:</labe>
+        <label>Password:</label> -->
+        <div class="lg-main">
+    
+            <div class="lg-2nd">
+
+             
+
+                <h1>LOGIN</h1>
+ <form method="POST">
+        <table class="table" style="width: 500px;">
+            <tr>
+                <center>
+                <th>Username</th>
+                <td><input type="text" required="" class="form-control" name="name"></td>
+            </tr>
+            <tr>
+                <th>Password</th>
+                <td><input type="password" required="" class="form-control" name="password"></td>
+            </tr>
+            </table></center>
+
+            <tr>
+                <span style="padding-left: 200px;">
+                <td><input type="submit" value="Login" class="btn btn-success" name="submit"></td></span>
+            </tr>
+        </table>
+    </form>
+
+</div>
+</div>
+    
+   
+    
+  
+
+    <style>
+      *{
+        margin: 0px;
+        padding: 0px;
+      }
+        .lg-main{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+            margin-top: 10px;
+
+        }
+        h1{
+           text-align: center;
+           padding-top: 20px;
+           color:
+         #FF5733;
+         font-family:Cambria;
+        }
+        .lg-2nd{
+            margin-bottom: 200px;
+            margin-top: 120px;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+            border-radius: 30px;
+            height: 250px;
+            background-color: rgba(0, 0, 0, 0.09);
+        }
+        body{
+        background-image: url("/static/assets/images/back.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        height: 150% !important;
+    }
+    header{
+        background:black;
+    }
+
+    </style>
+
+
+      {% include 'footer.html' %}

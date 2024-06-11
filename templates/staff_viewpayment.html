@@ -1,0 +1,41 @@
+{% include 'staff_header.html'%}
+
+   <div class="banner-info-w3layouts text-center">
+
+ 
+
+<!--//banner-info-w3layouts-->
+    <form action="" method="POST">
+        <center>
+
+<h4>View Payment</h4>
+    <table class="table table-striped"  style="color: white">
+        <tr>
+            <th>Member</th>
+            <th>Pay date</th>
+            <th>Status</th>
+           
+            
+        </tr>
+        {% for r in data['pay'] %}
+        <tr>
+            <td>{{r['men_fname']}}</td>
+            <td>{{r['p_date']}}</td>
+            <td>{{r['fee_status']}}</td>
+           
+            
+
+            
+
+
+        </tr>
+        {% endfor %}
+        </table>
+
+</center>
+   {% include 'footer.html' %}
+
+</div>
+</tr></table></h3></div></center></tr></table></h3>.</div></center></form></div>
+    
+ 

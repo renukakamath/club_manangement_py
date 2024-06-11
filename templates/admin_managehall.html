@@ -1,0 +1,130 @@
+{% include 'admin_header.html' %}
+
+
+
+
+   <div class="banner-info-w3layouts text-center">
+
+ 
+
+<!--//banner-info-w3layouts-->
+    <form action="" method="POST">
+        <center>
+            {% if data['category'] %}
+            <div class="top">
+        
+                <h3 style="color: white">Update Hall</h1>
+                
+             <table class="table" style="width: 500px;;color: white">
+                 <tr>
+                     <center>
+                     <th>Category </th>
+                     <td><select name="category" required="" class="form-control">
+
+                        <option value="{{data['category'][0]['cat_id']}}">{{data['category'][0]['Name']}}</option>
+                         
+
+                         {% for row in data['cat']%}
+                         <option value="{{row['cat_id']}}">{{row['Name']}}</option>
+                         {% endfor %}
+                     </select></td>
+                 </tr>
+                 <tr>
+                     <th>SubCategory</th>
+                    <td><select name="subcat" required="" class="form-control">
+
+                        <option value="{{data['category'][0]['subcat_id']}}">{{data['category'][0]['subcat_name']}}</option>
+                     
+
+                         {% for row in data['subcat']%}
+                         <option value="{{row['subcat_id']}}">{{row['subcat_name']}}</option>
+                         {% endfor %}
+                     </select></td>
+                 </tr>
+ 
+     
+                 <tr>
+                     <span style="padding-left: 200px;">
+                     <td align="center" colspan="2"><input type="submit" value="Update" class="btn btn-success" name="update"></td></span>
+                 </tr>
+             </table>
+     
+            </center>
+         
+        </div>
+         </form>
+         {% else %}
+         <center>
+
+         <div class="top">
+             <h3 style="color: white">Add Hall </h1>
+
+       
+
+        <table class="table" style="width: 500px;;color: white">
+            <tr>
+                     <center>
+                     <th>Category </th>
+                     <td><select name="category"required="" class="form-control">
+
+                        
+                         <option>--Select--</option>
+
+                         {% for row in data['cat']%}
+                         <option value="{{row['cat_id']}}">{{row['Name']}}</option>
+                         {% endfor %}
+                     </select></td>
+                 </tr>
+                 <tr>
+                     <th>SubCategory</th>
+                    <td><select name="subcat" required="" class="form-control">
+
+                       
+                         <option>--Select--</option>
+
+                         {% for row in data['subcat']%}
+                         <option value="{{row['subcat_id']}}">{{row['subcat_name']}}</option>
+                         {% endfor %}
+                     </select></td>
+                 </tr>
+ 
+            <tr>
+                <span style="padding-left: 200px;">
+                <td align="center" colspan="2"><input type="submit" value="Submit" class="btn btn-success" name="submit"></td></span>
+            </tr>
+        </table>
+    </div>
+</center>
+  
+</form>
+{% endif %}
+
+</div>
+
+</div>
+</tr></table></h3></div></center></tr></table></h3>.</div></center></form></div>
+<center>
+<h4>View Hall</h4>
+    <table class="table table-striped">
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Update</th>
+            
+        </tr>
+        {% for r in data['hallss'] %}
+        <tr>
+            <td>{{r['Name']}}</td>
+            <td>{{r['subcat_name']}}</td>
+            <td><a class="btn btn-success" href="?action=update&cid={{ r['hall_id'] }}">update</a></td>  
+            <td><a href="admin_manageevent?hid={{r['hall_id']}}">Manage Event</a></td>
+           
+
+
+        </tr>
+        {% endfor %}
+        </table>
+
+</center>
+    
+    {% include 'footer.html' %}
